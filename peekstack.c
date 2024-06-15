@@ -32,6 +32,12 @@ int peek(struct Stack* ptr,int index){
     }
     return ptr->arr[ptr->top-index+1];
 }
+int stackTop(struct Stack* ptr){
+    return ptr->arr[ptr->top];
+}
+int stackBottom(struct Stack* ptr){
+    return ptr->arr[0];
+}
 int main(){
     struct Stack* s=(struct Stack*)malloc(sizeof(struct Stack));
     s->size=10;
@@ -44,5 +50,8 @@ int main(){
     for(int i=1;i<=s->top+1;i++){
         printf("PEEK OF ELEMENT %d will be %d \n",i,peek(s,i));
     }
+    int o=stackTop(s);
+    int p=stackBottom(s);
+    printf("VALUES OF TOP AND BOTTOM ARE %d  %d \n",o,p);
     return 0;
 }
